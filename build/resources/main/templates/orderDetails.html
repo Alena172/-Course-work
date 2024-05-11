@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы</title>
+    <link href="/static/css/account.css" rel="stylesheet">
+    <link href="/static/css/general.css" rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{header :: header(orders)}"></header>
+<form id="myForm" th:action="@{/cartPost}" th:method="POST" style="display: none;">
+    <input id="inputItems" type="hidden" name="numberOfItems" th:value="${numberOfItems}">
+</form>
+<h1>Детали заказа</h1>
+<main>
+    <section class="cont">
+        <div class="order-info">
+            <p><strong>Номер заказа:</strong> [[${order.id}]]</p>
+            <p><strong>Дата заказа:</strong> [[${order.date}]]</p>
+            <p><strong>Статус:</strong> [[${order.status}]]</p>
+            <p><strong>Общая стоимость:</strong> [[${order.totalCost}]]</p>
+        </div>
+        <div class="cart">
+            <h2>Список товаров в заказе:</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Наименование товара</th>
+                    <th>Количество</th>
+                    <th>Цена за единицу</th>
+                    <th>Стоимость</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="orderItem : ${order.orderItems}">
+                    <td th:text="${orderItem.product.name}"></td>
+                    <td th:text="${orderItem.amount}"></td>
+                    <td th:text="${orderItem.product.price}"></td>
+                    <td th:text="${orderItem.product.price} * ${orderItem.amount}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+</html>

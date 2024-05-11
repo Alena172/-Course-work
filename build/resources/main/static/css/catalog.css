@@ -1,0 +1,117 @@
+
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.product:first-child {
+    margin-top: 20px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-image {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.product-image img {
+    border-radius: 10%;
+    max-width: 250px;
+    height: 270px;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.clickButtons {
+    margin-top: 10px;
+}
+
+.description {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.clickButtons button.plusMinus {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.clickButtons button:hover {
+    background-color: #5c5755;
+    color: #ffffff;
+}
+
+.clickButtons button.plusMinus:active {
+    background-color: #222222;
+}
+
+.clickButtons button.buyIt {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    color: #333333;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.clickButtons button.buyIt:hover {
+    background-color: #5c5755;
+    color: #ffffff;
+}
+
+.clickButtons button.buyIt:active {
+    background-color: #222222;
+}
+
+.clickButtons input[type="number"] {
+    width: 50px;
+    padding: 3px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #333333;
+    transition: border-color 0.3s;
+}
+
+.clickButtons input[type="number"]:focus {
+    border-color: #5c5755;
+    outline: none;
+}

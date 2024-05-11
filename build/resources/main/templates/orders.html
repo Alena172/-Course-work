@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "/static/css/general.css" rel = "stylesheet">
+    <link href = "/static/css/account.css" rel = "stylesheet">
+    <title>Заказы</title>
+</head>
+<body>
+<header th:replace = "~{header :: header(orders)}"></header>
+<form id="myForm" th:action="@{/cartPost}" th:method="POST" style="display: none;">
+    <input id="inputItems" type="hidden" name="numberOfItems" th:value="${numberOfItems}">
+</form>
+<h1>МОИ ЗАКАЗЫ</h1>
+<main>
+    <section class="cart">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.getId()}"></td>
+                <td th:text="${order.getDate()}"></td>
+                <td th:text="${order.getTotalCost()}"></td>
+                <td th:text="${order.getStatus()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="/static/js/orders.js"></script>
+<script>
+    window.onload = function () {
+        getNumberOfItems();
+        fillCart();
+    };
+</script>
+<footer th:replace = "~{footer :: footer}"></footer>
+</body>
+</html>

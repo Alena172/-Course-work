@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href = "/static/css/enter.css" rel = "stylesheet">
+    <link href = "/static/css/general.css" rel = "stylesheet">
+</head>
+<body>
+<header th:replace = "~{header :: header(orders)}"></header>
+<main>
+    <form id="form-log" th:action="@{/login}" th:object="${userReg}" th:method="POST">
+        <label> <u>Логин</u></label>
+        <br>
+        <input th:field="*{username}" type="email" id="email-input" name="email" placeholder="Почта" required>
+        <input th:field="*{password}" type="password" id="password-input" name="password" placeholder="Пароль" required>
+        <input type="submit" value="Войти">
+        <p>Еще нет аккаунта? <a id = "registerNow" onclick="clearLoginForm()">Зарегистрироваться</a> </p>
+    </form>
+    <form id="form-reg" style="display: none;" th:action="@{/reg}" th:object="${userReg}" th:method = "POST">
+        <label> <u>Регистрация</u></label>
+        <br>
+        <input th:field="*{name}" type="text" id="first-name" pattern = "^[а-яА-ЯёЁa-zA-Z]{3,}$" placeholder="Имя" required>
+        <input th:field="*{surname}" type="text" id="second-name" pattern = "^[а-яА-ЯёЁa-zA-Z]{3,}$"  placeholder="Фамилия" required>
+        <input th:field="*{username}" type="email" id="email" placeholder="Почта" required>
+        <input th:field="*{phoneNumber}" type="tel" pattern="\+?[\d]{5,40}" id="phone-number" placeholder="Номер телефона" required>
+        <input th:field="*{password}" type="password" id="password" placeholder="Пароль" required>
+        <input type="submit" id = "regBut" value="Зарегистрироваться">
+        <p>Уже есть аккаунт? <a id = "loginNow" onclick="clearRegistrationForm()">Авторизоваться</a> </p>
+    </form>
+</main>
+<footer th:replace = "~{footer :: footer}"></footer>
+<script src="/static/js/sign.js"></script>
+</body>
+</html>

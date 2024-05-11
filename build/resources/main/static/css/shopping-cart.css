@@ -1,0 +1,166 @@
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.cart {
+    position: relative;
+    width: 1000px;
+}
+
+.contactsMenu {
+    border-radius: 20px;
+    background-color: transparent;
+    width: 25%;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.contactsMenu h2 {
+    text-align: center;
+}
+
+.contactsMenu div {
+    text-align: center;
+}
+
+.contactsMenu button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #4f4f4f;
+    width: 80%;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contactsMenu button:hover{
+    background-color: #4c3e39;
+    color: #ffffff;
+}
+
+.contactsMenu input[type="text"] {
+    width: 50px;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+.contactsMenu p {
+    width: 30px;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.textInput input {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px;
+    background: #efb19c;
+    border: rgb(128, 128, 128);
+    height: 30px;
+    width: 340px;
+}
+
+.topBar {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.7fr 0.7fr;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: solid 2px #ddcecb;
+}
+
+.topBar div {
+    border-left: solid 2px #ddcecb;
+    border-top: solid 2px #ddcecb;
+    padding: 10px;
+}
+
+.topBar div:last-child {
+    border-right: solid 2px #ddcecb;
+}
+
+.topBar p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.topBar div:first-child {
+    border-radius: 20px 0 0 0;
+}
+
+.topBar div:last-child {
+    border-radius: 0 20px 0 0;
+}
+
+.oneGood {
+    padding-left: 50px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.7fr 0.7fr;
+    align-items: center;
+    justify-items: start;
+    border-bottom: solid 2px #ddcecb;
+}
+
+.card {
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: 550;
+    text-decoration: none;
+    justify-items: center;
+    align-items: center;
+}
+
+.card img {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.card a {
+    color: black;
+    text-decoration: none;
+}
+
+.remove-btn:nth-child(2):hover {
+    color: #aa7474;
+    border: 2px solid #652525;
+    background-color: white;
+}
+
+.remove-btn {
+    background: #d1c4c1;
+    border: 2px solid #d1c4c1;
+    margin-left: 10px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.removeAndPrice{
+    display: flex;
+    flex-direction: row;
+}
+
+.removeAndPrice button{
+    margin-left: 20px;
+    margin-top: 15px;
+}

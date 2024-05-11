@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/catalog.css" rel="stylesheet">
+    <link href="/static/css/general.css" rel="stylesheet">
+    <title>Меню</title>
+</head>
+<body>
+<header th:replace="~{header :: header(menu)}"></header>
+<form id="myForm" th:action="@{/cartPost}" th:method="POST" style="display: none;">
+    <input id="inputItems" type="hidden" name="numberOfItems" th:value="${numberOfItems}">
+</form>
+<h1>МЕНЮ</h1>
+<main class="section">
+    <div class="container">
+        <div class="catalogFlex">
+            <div class="catalog">
+                <div class="product" th:each="prod : ${productList}">
+                    <div class="product-info">
+                        <div class="product-image">
+                            <img th:src="@{'/static/images/' + ${prod.getId()} + '.jpg'}" th:id="'img' + ${prod.getId()}">
+                        </div>
+                        <div class="product-details">
+                            <p class="title" th:id="'title' + ${prod.getId()}" th:text="${prod.getName()}"></p>
+                            <p class="info" th:id="'info' + ${prod.getId()}"
+                               th:text="${prod.getPrice() + ',00 ₽'}"></p>
+                            <div class="clickButtons">
+                                <button class="plusMinus" th:attr="onclick=|decrementQuantity('${prod.getId()}')|">-</button>
+                                <input type="number" min="1" max="10" value="1" readonly
+                                       th:id="'quantity' + ${prod.getId()}">
+                                <button class="plusMinus" th:attr="onclick=|incrementQuantity('${prod.getId()}')|">+</button>
+                                <button class="buyIt" id="buyButton"
+                                        th:attr="onclick=|addToCart('${prod.getId()}')|">В корзину
+                                </button>
+                            </div>
+                            <div class="description">
+                                <p th:text="${prod.getDescription()}"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/orders.js"></script>
+</main>
+<script>
+    window.onload = function () {
+        getNumberOfItems();
+    };
+    setInterval(fillCart, 1000);
+</script>
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+</html>

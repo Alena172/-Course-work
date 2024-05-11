@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.ApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-20T16:58:07" hostname="DESKTOP-3V2CUMC" time="0.796">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.ApplicationTests" time="0.796"/>
+  <system-out><![CDATA[19:57:57.696 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:57:57.884 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.Application for test class com.example.ApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-20T19:57:58.486+03:00  INFO 19732 --- [task15] [    Test worker] com.example.ApplicationTests             : Starting ApplicationTests using Java 21 with PID 19732 (started by Alena in C:\Users\Alena\IdeaProjects\task15b)
+2024-04-20T19:57:58.489+03:00  INFO 19732 --- [task15] [    Test worker] com.example.ApplicationTests             : No active profile set, falling back to 1 default profile: "default"
+2024-04-20T19:57:59.561+03:00  INFO 19732 --- [task15] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-20T19:57:59.577+03:00  INFO 19732 --- [task15] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2024-04-20T19:58:00.884+03:00  INFO 19732 --- [task15] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-20T19:58:01.235+03:00  INFO 19732 --- [task15] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f42b194
+2024-04-20T19:58:01.248+03:00  INFO 19732 --- [task15] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-20T19:58:01.488+03:00  INFO 19732 --- [task15] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-20T19:58:01.647+03:00  INFO 19732 --- [task15] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-20T19:58:01.888+03:00  WARN 19732 --- [task15] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-20T19:58:03.255+03:00  INFO 19732 --- [task15] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-20T19:58:04.228+03:00  WARN 19732 --- [task15] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-20T19:58:07.132+03:00  INFO 19732 --- [task15] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-20T19:58:07.415+03:00  INFO 19732 --- [task15] [    Test worker] com.example.ApplicationTests             : Started ApplicationTests in 9.288 seconds (process running for 11.06)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Alena\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.12\be4984cb6fd1ef1d11f218a648889dfda44b8a15\byte-buddy-agent-1.14.12.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

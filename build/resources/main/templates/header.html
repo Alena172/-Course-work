@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<body>
+<header class="header" th:fragment="header(currentPage)">
+    <div class="container header__container">
+        <nav class="menu" id="menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link" href="/menu" th:classappend="${currentPage == 'menu' ? 'currentPage' : ''}">
+                        Меню
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="/orders" th:classappend="${currentPage == 'orders' ? 'currentPage' : ''}">
+                        Мои заказы
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#" onclick="submitForm()" th:classappend="${currentPage == 'shoppingCart' ? 'currentPage' : ''}">
+                        Корзина
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="/myaccount" th:classappend="${currentPage == 'myaccount' ? 'currentPage' : ''}">
+                        Мой аккаунт
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+</body>
+</html>
+
+
+
