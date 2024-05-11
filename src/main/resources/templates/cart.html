@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="/static/css/shopping-cart.css" rel="stylesheet">
+    <link href="/static/css/general.css" rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{header :: header(shoppingCart)}"></header>
+<h1>КОРЗИНА</h1>
+<form id="myForm" th:action="@{/cartPost}" th:method="POST" style="display: none;">
+    <input id="inputItems" type="hidden" name="numberOfItems" th:value="${numberOfItems}">
+</form>
+<main>
+    <section class="cart">
+        <div class="topBar">
+            <div><p>Товар</p></div>
+            <div><p>Количество</p></div>
+            <div><p>Цена за один товар</p></div>
+            <div><p>Общая стоимость</p></div>
+        </div>
+        <div class="cartGoods">
+            <div id="cart-items"></div>
+        </div>
+        <form id="myContacts" class="contactsMenu" th:action="@{/add-order}" th:method="POST" th:object="${order}">
+            <div th:each="book, i: *{orderItems}">
+                <input th:id="${'index' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].product.id}" style="display: none;">
+                <input th:id="${'name' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].product.name}" style="display:none;">
+                <input th:id="${'amount' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].amount}" style="display: none;">
+                <input th:id="${'price' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].product.price}" style="display: none;">
+
+            </div>
+            <input type="hidden" id="totalCost" name="totalCost">
+            <button type="submit" onclick="removeAll()">Оформить</button>
+        </form>
+    </section>
+</main>
+<script src="/static/js/orders.js"></script>
+<script>
+    window.onload = function () {
+        getNumberOfItems();
+        fillCart();
+    };
+</script>
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+</html>
